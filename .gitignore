@@ -1,0 +1,10 @@
+# IDE specific
+.idea
+
+# Project specific
+vendor
+.phpunit.result.cache
+composer.lock
+
+# OS specific
+.DS_Store
