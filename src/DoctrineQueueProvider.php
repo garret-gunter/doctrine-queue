@@ -55,8 +55,8 @@ class DoctrineQueueProvider extends ServiceProvider implements DeferrableProvide
 	protected function registerWorker(): void
 	{
 		$this->app->bind(Worker::class, static function ($app) {
-			$isDownForMaintenance = function () {
-				return $this->app->isDownForMaintenance();
+			$isDownForMaintenance = static function () use ($app) {
+				return $app->isDownForMaintenance();
 			};
 
 			return new Worker(
